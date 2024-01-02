@@ -23,7 +23,7 @@ tooltip label {
 
 /* workspaces ------------------------------------------------------------------------------- */
 #workspaces, #clock, #taskbar, #battery, #group-power {
-    background-color: rgb(35, 31, 36);
+    background-color: #231f24;
     border-radius: 10;
 }
 
@@ -134,9 +134,7 @@ tooltip label {
     padding-bottom: 0; */
 }
 
-.power-child {
-    
-}
+
 
 
 /* 
