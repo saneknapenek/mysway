@@ -1,0 +1,152 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Roboto", "Helvetica", "Arial", "sans-serif", "Font Awesome 5 Free", "Font Awesome 6 Free";
+    font-size: 16px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(255, 255, 255, 0);
+    /* color: white; */
+    color: black;
+    border-radius: 10;
+}
+
+tooltip {
+  background: rgba(43, 48, 59, 0.5);
+  border: 1px solid rgba(100, 114, 125, 0.5);
+}
+tooltip label {
+  color: rgb(255, 255, 255);
+}
+
+/* workspaces ------------------------------------------------------------------------------- */
+#workspaces, #clock, #taskbar, #battery, #group-power {
+    background-color: rgb(35, 31, 36);
+    border-radius: 10;
+}
+
+#workspaces button {
+    padding-top: 10px;
+    padding-bottom: 6px;
+    padding-left: 7px;
+    padding-right: 7px;
+    color: rgb(170, 156, 156);
+}
+
+#workspaces button.focused {
+    color: rgb(255, 0, 0);
+    font-weight: 800;
+}
+
+#workspaces button:hover {
+    color: rgb(255, 0, 0);
+    border-radius: 10;
+}
+/* workspaces ------------------------------------------------------------------------------- */
+
+/* clock ------------------------------------------------------------------------------------ */
+#clock {
+    padding-top: 10px;
+    padding-bottom: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    color: #ffffff;
+}
+/* clock ------------------------------------------------------------------------------------ */
+
+/* taskbar ---------------------------------------------------------------------------------- */
+#taskbar button {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+#taskbar button:hover {
+    border-radius: 10;
+}
+
+#taskbar button.active {
+    border-radius: 10;
+    background-color: white;
+}
+/* taskbar ---------------------------------------------------------------------------------- */
+
+/* battery ---------------------------------------------------------------------------------- */
+#battery {
+    /* background-color: rgb(35, 31, 36); */
+    color: rgb(170, 156, 156);
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 7;
+    padding-right: 7;
+}
+
+#battery.charging {
+    background-color: #26A65B;
+    color: #161616;
+    animation-name: filling;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: unset;
+}
+
+#battery.warning:not(.charging) {
+    background: #ebc90c;
+    color: #161616;
+}
+
+#battery.critical:not(.charging) {
+    background: #f53c3c;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+@keyframes filling {
+    from {
+        background-color: #161616;
+        color: rgb(170, 156, 156);
+    }
+    to {
+        background-color: #26A65B;
+        color: #161616;
+    }
+}
+/* battery ---------------------------------------------------------------------------------- */
+
+#group-power {
+    color: rgb(170, 156, 156);
+    padding-left: 7px;
+    padding-right: 7px;
+    /* padding-top: 0;
+    padding-bottom: 0; */
+}
+
+.power-child {
+    
+}
+
+
+/* 
+#mode {
+    padding: 0 10px;
+}
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+} */
+
+

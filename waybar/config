@@ -1,0 +1,127 @@
+[{
+    "name": "main",
+    "height": 37,
+    "spacing": 10,
+    "margin": 5,
+
+    "modules-left": ["sway/workspaces", "wlr/taskbar"],
+    "modules-center": ["clock"],
+    "modules-right": ["backlight", "sway/language", "battery", "group/group-power"],
+    
+    "sway/workspaces": {
+        "all-outputs": true,
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": []
+        }
+    },
+
+    "clock": {
+        "interval": 1,
+        "format": "{:%H:%M:%S %d.%m}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "calendar-weeks-pos": "right",
+        "today-format": "<span color='#ff6699'><b><u>{}</u></b></span>",
+        "format-calendar": "<span color='#ecc6d9'><b>{}</b></span>",
+        "format-calendar-weeks": "<span color='#99ffdd'><b>W{:%V}</b></span>",
+        "format-calendar-weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "on-scroll": {
+            "calendar": 1
+        }
+    },
+    
+    "battery": {
+        "states": {
+            "warning": 25,
+            "critical": 15
+        },
+        "format": "{capacity}%  {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "group/group-power": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "power-child",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/power",
+            "custom/quit",
+            "custom/lock",
+            "custom/reboot",
+        ]
+    },
+    "custom/quit": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "hyprctl dispatch exit"
+    },
+    "custom/lock": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "swaylock"
+    },
+    "custom/reboot": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "reboot"
+    },
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "shutdown now"
+    },
+
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", ""]
+    },
+
+    // "bluetooth": {
+    //     "format": "{status}",
+    //     "format-connected": " {device_alias}",
+    //     "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    //     // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+    //     "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    //     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    //     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    //     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+    // },
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 14,
+        "icon-theme": "Numix-Circle",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [
+           "Alacritty"
+        ],
+        "app_ids-mapping": {
+          "firefoxdeveloperedition": "firefox-developer-edition"
+        },
+        "rewrite": {
+            "Firefox Web Browser": "Firefox",
+            "Foot Server": "Terminal"
+        }
+    }
+}]

@@ -1,0 +1,4 @@
+sway
+waybar
+alacritty
+wofi

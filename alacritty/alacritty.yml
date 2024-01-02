@@ -1,0 +1,60 @@
+font:
+  size: 12.0
+  normal:
+    family: "Source Code Pro"
+    style: "Regular"
+  bold: 
+    family: "Source Code Pro"
+    style: "Bold"
+  italic:
+    family: "Source Code Pro"
+    style: "Italic"
+
+shell:
+  program: "/bin/zsh"
+
+draw_bold_text_with_bright_colors: true
+
+cursor:
+  style: Block
+
+custom_cursor_colors: true
+
+colors:
+  primary:
+    background: '0x161616'
+    foreground: '0xffffff'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xffffff'
+    cursor: '0xff0000'
+
+  # Normal colors
+  normal:
+    black:   '0x101010'
+    red:     '0xa81819'
+    green:   '0x507000'
+    yellow:  '0xb38200'
+    blue:    '0x213e70'
+    magenta: '0x693e69'
+    cyan:    '0x1f555a'
+    white:   '0xd38adb'
+  # Bright colors
+  bright:
+    black:   '0x000000'
+    red:     '0xff0000'
+    green:   '0x00ff2f'
+    yellow:  '0xddff00'
+    blue:    '0x2600ff'
+    magenta: '0xee00ff'
+    cyan:    '0x0077ff'
+    white:   '0xffffff'
+
+window:
+  padding:
+    x: 10
+    y: 2
+  dynamic_padding: false
+  decorations: none
+  opacity: 1.0
