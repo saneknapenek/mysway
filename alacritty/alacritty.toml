@@ -1,0 +1,55 @@
+[font]
+size = 8
+normal = { family = "Source Code Pro", style = "Regular" }
+bold = { family = "Source Code Pro", style = "Bold" }
+italic = { family = "Source Code Pro", style = "Italic" }
+
+[shell]
+program = "/bin/zsh"
+
+[cursor]
+style = { shape = "Block", blinking = "Always" }
+
+[colors]
+draw_bold_text_with_bright_colors = true
+cursor = { text = "#ffffff", cursor = "#ff0000" }
+
+[colors.primary]
+background = "#161616"
+foreground = "#ffffff"
+
+[colors.normal]
+black = "#101010"
+red = "#a81819"
+green = "#507000"
+yellow = "#b38200"
+blue = "#213e70"
+magenta = "#693e69"
+cyan = "#1f555a"
+white = "#d38adb"
+
+[colors.bright]
+black = "#000000"
+red = "#ff0000"
+green = "#00ff2f"
+yellow = "#ddff00"
+blue = "#2600ff"
+magenta = "#ee00ff"
+cyan = "#0077ff"
+white = "#ffffff"
+
+[bell]
+duration = 150
+color = "#a81819"
+
+[window]
+padding = { x = 8, y = 8 }
+dynamic_padding = false
+decorations = "none"
+opacity = 1.0
+
+[terminal]
+osc52 = "CopyPaste"
+
+[mouse]
+hide_when_typing = true
