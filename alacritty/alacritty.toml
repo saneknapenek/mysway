@@ -1,5 +1,5 @@
 [font]
-size = 8
+size = 14
 normal = { family = "Source Code Pro", style = "Regular" }
 bold = { family = "Source Code Pro", style = "Bold" }
 italic = { family = "Source Code Pro", style = "Italic" }
@@ -15,11 +15,12 @@ draw_bold_text_with_bright_colors = true
 cursor = { text = "#ffffff", cursor = "#ff0000" }
 
 [colors.primary]
-background = "#161616"
+# background = "#161616"
+background = "#000000"
 foreground = "#ffffff"
 
 [colors.normal]
-black = "#101010"
+black = "#2f2f2f"
 red = "#a81819"
 green = "#507000"
 yellow = "#b38200"
@@ -29,7 +30,7 @@ cyan = "#1f555a"
 white = "#d38adb"
 
 [colors.bright]
-black = "#000000"
+black = "#2f2f2f"
 red = "#ff0000"
 green = "#00ff2f"
 yellow = "#ddff00"

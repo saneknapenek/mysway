@@ -1,150 +1,169 @@
+@define-color color_back #000000;
+@define-color color_primary #63059d;
+@define-color color_seconadry #d62ad9;
+@define-color color_gray #422e42;
+@define-color color_clear_gray #8697a4;
+@define-color color_red #ff0000;
+
 * {
-    border: none;
-    border-radius: 0;
-    font-family: "Roboto", "Helvetica", "Arial", "sans-serif", "Font Awesome 5 Free", "Font Awesome 6 Free";
-    font-size: 16px;
-    min-height: 0;
+  font-family: "BigBlueTermPlus Nerd Font", "Font Awesome 5 Free";
+  font-size: 16px;
 }
-
+  
 window#waybar {
-    background: rgba(255, 255, 255, 0);
-    /* color: white; */
-    color: black;
-    border-radius: 10;
+  background: transparent;
+  background-color: @color_back;
+  border-bottom: 3px solid @color_primary;
+}
+  
+#waybar.empty #window {
+  background-color: transparent;
+  color: #422e42;
+}
+  
+#window {
+  font-family: "BigBlueTermPlus Nerd Font";
+  font-size: 14px;
+  color: @color_gray;
+}
+  
+button {
+  border: none;
+  border-radius: 0;
 }
 
-tooltip {
-  background: rgba(43, 48, 59, 0.5);
-  border: 1px solid rgba(100, 114, 125, 0.5);
+#button:hover {
+  background-color: @color_back;
 }
-tooltip label {
-  color: rgb(255, 255, 255);
-}
-
-/* workspaces ------------------------------------------------------------------------------- */
-#workspaces, #clock, #taskbar, #battery, #group-power {
-    background-color: #231f24;
-    border-radius: 10;
-}
-
+  
 #workspaces button {
-    padding-top: 10px;
-    padding-bottom: 6px;
-    padding-left: 7px;
-    padding-right: 7px;
-    color: rgb(170, 156, 156);
-}
-
-#workspaces button.focused {
-    color: rgb(255, 0, 0);
-    font-weight: 800;
+  padding: 0 6px;
+  color: @color_clear_gray;
 }
 
 #workspaces button:hover {
-    color: rgb(255, 0, 0);
-    border-radius: 10;
-}
-/* workspaces ------------------------------------------------------------------------------- */
-
-/* clock ------------------------------------------------------------------------------------ */
-#clock {
-    padding-top: 10px;
-    padding-bottom: 6px;
-    padding-left: 8px;
-    padding-right: 8px;
-    color: #ffffff;
-}
-/* clock ------------------------------------------------------------------------------------ */
-
-/* taskbar ---------------------------------------------------------------------------------- */
-#taskbar button {
-    padding-top: 6px;
-    padding-bottom: 6px;
-    padding-left: 7px;
-    padding-right: 7px;
+  box-shadow: none;
+  text-shadow: none;
+  background: none;
+  border: none;
 }
 
-#taskbar button:hover {
-    border-radius: 10;
+
+#workspaces button.focused {
+  box-shadow: inset 0 -3px @color_seconadry;
+  background-color: @color_back;
+  color: @color_seconadry;
+}
+  
+#workspaces button.urgent {
+  color: @color_red;
 }
 
-#taskbar button.active {
-    border-radius: 10;
-    background-color: white;
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#tray {
+  color: @color_clear_gray;
 }
-/* taskbar ---------------------------------------------------------------------------------- */
 
-/* battery ---------------------------------------------------------------------------------- */
+#tray {
+  padding-right: 10px;
+}
+
+#network {
+  padding-left: 10px;
+}
+
+#pulseaudio {
+  padding-left: 10px;
+}
+
 #battery {
-    /* background-color: rgb(35, 31, 36); */
-    color: rgb(170, 156, 156);
-    padding-top: 6px;
-    padding-bottom: 6px;
-    padding-left: 7;
-    padding-right: 7;
+  padding-left: 2px;
 }
 
-#battery.charging {
-    background-color: #26A65B;
-    color: #161616;
-    animation-name: filling;
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-iteration-count: unset;
+#language {
+  color: @color_primary;
+  padding: 0 10px;
+}
+
+#clock {
+  font-size:14px;
+  font-weight: bold;
+  padding: 0 10px;
+  padding-top: 4px;
+  padding-bottom: 2px;
+  margin: 7px 10px;
+  /* color: @color_seconadry;
+  border: 1px solid @color_gray;
+  border-radius: 8px; */
+}
+
+#battery icon {
+  color: @color_red;
+}
+  
+#battery.charging, #battery.plugged {
+  color: #035f29;
+}
+  
+@keyframes blink {
+  to {
+    color: orange;
+  }
 }
 
 #battery.warning:not(.charging) {
-    background: #ebc90c;
-    color: #161616;
+  color: #f53c3c;
 }
-
+  
 #battery.critical:not(.charging) {
-    background: #f53c3c;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  color: @color_red;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+  
+label:focus {
+  background-color: #000000;
 }
 
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: black;
-    }
+#network.disconnected {
+  color: #673535;
 }
 
-@keyframes filling {
-    from {
-        background-color: #161616;
-        color: rgb(170, 156, 156);
-    }
-    to {
-        background-color: #26A65B;
-        color: #161616;
-    }
-}
-/* battery ---------------------------------------------------------------------------------- */
-
-#group-power {
-    color: rgb(170, 156, 156);
-    padding-left: 7px;
-    padding-right: 7px;
-    /* padding-top: 0;
-    padding-bottom: 0; */
+#tray > .passive {
+  -gtk-icon-effect: dim;
 }
 
-
-
-
-/* 
-#mode {
-    padding: 0 10px;
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: #eb4d4b;
 }
 
-#mode {
-    background: #64727D;
-    border-bottom: 3px solid white;
-} */
+/*
+window#waybar.solo {
+background-color: #FFFFFF;
+}
 
+window#waybar.termite {
+background-color: #3F3F3F;
+}
 
+window#waybar.chromium {
+background-color: #000000;
+border: none;
+}
+  */
+
+#clock.calendar {
+  background-color: #f53c3c;
+}

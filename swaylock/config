@@ -1,0 +1,21 @@
+font=BigBlueTermPlus Nerd Font
+font-size=24
+color=#000000
+indicator-radius=90
+indicator-thickness=4
+inside-color=#000000
+inside-clear-color=#000000
+inside-ver-color=#000000
+inside-wrong-color=#000000
+key-hl-color=#d62ad9
+bs-hl-color=#d62ad9
+ring-color=#63059d
+ring-clear-color=#63059d
+ring-wrong-color=#63059d
+ring-ver-color=#63059d
+text-color=#422e42
+text-clear-color=#422e42
+text-wrong-color=#422e42
+text-ver-color=#422e42
+separator-color=#63059d
+hide-keyboard-layout

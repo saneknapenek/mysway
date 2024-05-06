@@ -1,101 +1,83 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
 
-### Variables
-#
-# Logo key. Use Mod1 for Alt.
 set $mod Mod4
-# Home row direction keys, like vim
-set $left h
-set $down j
-set $up k
-set $right l
-# Your preferred terminal emulator
+
+# set $left h
+# set $down j
+# set $up k
+# set $right l
+
+
 set $term alacritty
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-# set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu wofi
 
-### Output configuration
-#
-output * bg /home/san/Images/wallpapers/Подвесной мост.jpg fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
+set $menu wofi --conf /home/san/.config/wofi/run/run.config --style /home/san/.config/wofi/run/run.css --show run
 
-### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
 
-### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
+exec_always "setxkbmap -layout us,ru -variant ,, -option grp:win_space_toggle"
 
 input "type:keyboard" {
     xkb_layout us,ru
-    xkb_options grp:win_space_toggle 
+    xkb_options grp:win_space_toggle
 }
 
-### Key bindings
-#
-# Basics:
-#
-    # Start a terminal
-    bindsym $mod+Return exec $term
+input "2362:597:SYNA3602:00_093A:0255_Touchpad" {
+    dwt enabled
+    tap enabled
+    natural_scroll enabled
+    middle_emulation enabled
+}
 
-    # Kill focused window
-    bindsym $mod+q kill
+focus_follows_mouse yes
 
-    # Start your launcher
-    bindsym $mod+a exec $menu --show drun
+output eDP-1 background #000000 solid_color
 
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
-    floating_modifier $mod normal
 
-    # Reload the configuration file
-    bindsym $mod+Shift+c reload
+## Idle configuration
+exec swayidle -w \
+    timeout 3120 'swaylock -f' \
+    timeout 3120 'swaymsg "output * power off"' \
+    resume 'swaymsg "output * power on"' \
+    after-resume 'swaymsg "output * enable"' \
+    before-sleep 'swaylock -f'
 
-    # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'    
+bindsym $mod+l exec swaylock --config /home/san/.config/swaylock/config
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+
+# Start a terminal
+bindsym $mod+Return exec $term
+
+# Kill focused window
+bindsym $mod+q kill
+
+# Start your launcher
+bindsym $mod+d exec $menu
+bindsym ctrl+0 exec wofi --conf /home/san/.config/wofi/wifi/wifi.config --style /home/san/.config/wofi/wifi/wifi.css
+
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $mod normal
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Exit sway (logs you out of your Wayland session)
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
     # Move your focus around
-    bindsym $mod+$left focus left
-    bindsym $mod+$down focus down
-    bindsym $mod+$up focus up
-    bindsym $mod+$right focus right
+    # bindsym $mod+$left focus left
+    # bindsym $mod+$down focus down
+    # bindsym $mod+$up focus up
+    # bindsym $mod+$right focus right
     # Or use $mod+[up|down|left|right]
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
@@ -103,10 +85,10 @@ input "type:keyboard" {
     bindsym $mod+Right focus right
 
     # Move the focused window with the same, but add Shift
-    bindsym $mod+Shift+$left move left
-    bindsym $mod+Shift+$down move down
-    bindsym $mod+Shift+$up move up
-    bindsym $mod+Shift+$right move right
+    # bindsym $mod+Shift+$left move left
+    # bindsym $mod+Shift+$down move down
+    # bindsym $mod+Shift+$up move up
+    # bindsym $mod+Shift+$right move right
     # Ditto, with arrow keys
     bindsym $mod+Shift+Left move left
     bindsym $mod+Shift+Down move down
@@ -149,8 +131,8 @@ input "type:keyboard" {
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
+    # bindsym $mod+s layout stacking
+    # bindsym $mod+w layout tabbed
     bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
@@ -160,10 +142,10 @@ input "type:keyboard" {
     bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+Shift+Tab focus mode_toggle
+    bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
-    # bindsym $mod+a focus parent
+    bindsym $mod+a focus parent
 #
 # Scratchpad:
 #
@@ -184,10 +166,10 @@ mode "resize" {
     # right will grow the containers width
     # up will shrink the containers height
     # down will grow the containers height
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+    # bindsym $left resize shrink width 10px
+    # bindsym $down resize grow height 10px
+    # bindsym $up resize shrink height 10px
+    # bindsym $right resize grow width 10px
 
     # Ditto, with arrow keys
     bindsym Left resize shrink width 10px
@@ -201,49 +183,24 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+# gaps inner 5
+# gaps outer 5
+smart_gaps off
 
-#
-# Windows:
-#
-	# Гапсы
-	gaps inner 5
-	gaps outer 5
-	smart_gaps off
+default_border pixel 1
+default_floating_border pixel 1
 
-	# Толщина рамок для обычных и плавающих окон
-	default_border pixel 1
-	default_floating_border none
-	
-	# Размер рамок окон
-	for_window [tiling] border pixel 1
-	for_window [floating] border none
+for_window [tiling] border pixel 1
+for_window [floating] border pixel 2
 
-	# Отключение рамки если открыто одно окно
-	smart_borders on
+smart_borders on
 
-    #color
-    client.focused #b265c4 #b265c4 #b265c4
+client.unfocused #63059d #63059d #63059d
+client.focused #d62ad9 #d62ad9 #d62ad9
+client.urgent #ff0000 #63059d #ff0000
+client.placeholder #63059d #63059d #63059d
 
 
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-# bar {
-#     position top
-
-#     # When the status_command prints a new line to stdout, swaybar updates.
-#     # The default just shows the current date and time.
-#     status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
-
-#     colors {
-#         statusline #ffffff
-#         background #323232
-#         inactive_workspace #32323200 #32323200 #5c5c5c
-#     }1
-# }
-
-bar swaybar_command waybar
-
-include /etc/sway/config.d/*
-# include ~/.config/sway/appbind
+bar {
+	swaybar_command waybar
+}
