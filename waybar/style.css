@@ -63,11 +63,8 @@ button {
 #battery,
 #cpu,
 #memory,
-#temperature,
 #backlight,
 #network,
-#pulseaudio,
-#wireplumber,
 #tray {
   color: @color_clear_gray;
 }
@@ -80,12 +77,8 @@ button {
   padding-left: 10px;
 }
 
-#pulseaudio {
-  padding-left: 10px;
-}
-
 #battery {
-  padding-left: 2px;
+  padding-left: 10px;
 }
 
 #language {

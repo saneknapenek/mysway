@@ -5,7 +5,7 @@
     "modules-left": ["sway/workspaces", "sway/window", "sway/mode", "sway/scratchpad", "custom/media"],
     "modules-center": ["clock"],
     
-    "modules-right": ["tray", "cpu", "memory", "network", "pulseaudio", "backlight", "battery", "sway/language"],
+    "modules-right": ["tray", "cpu", "memory", "network", "battery", "sway/language"],
  
     "keyboard-state": {
         "numlock": true,
@@ -42,11 +42,7 @@
         "format": " {usage}%"
     },
     "memory": {
-        "format": " {}%"
-    },
-    "backlight": {
-        "format": "{icon} {percent}%",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format": " {}%"
     },
     "battery": {
         "states": {
@@ -68,26 +64,5 @@
         "format-disconnected": "Disconnected ⚠ {ifname}",
         "format-alt": " {ifname}: {ipaddr}/{cidr}",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)"
-    },
-    "pulseaudio": {
-        "scroll-step": 5,
-        "max-volume": 100,
-        "format": "{icon} {volume}%",
-        "format-bluetooth": " {icon} {volume}%",
-        "format-bluetooth-muted": "  {icon}",
-        "format-muted": " ",
-        "format-source": " {volume}%",
-        "format-source-muted": "",
-        "format-icons": {
-           "headphone": "",
-           "hands-free": "",
-           "headset": "",
-           "phone": "",
-           "portable": "",
-           "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol",
-        "tooltip": ""
     }
 }
