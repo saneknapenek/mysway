@@ -2,10 +2,10 @@
     "height": 32,
     "spacing": 6,
     
-    "modules-left": ["sway/workspaces", "sway/window", "sway/mode", "sway/scratchpad", "custom/media"],
+    "modules-left": ["sway/workspaces", "sway/window"],
     "modules-center": ["clock"],
     
-    "modules-right": ["tray", "cpu", "memory", "network", "battery", "sway/language"],
+    "modules-right": ["sway/mode", "sway/scratchpad", "tray", "cpu", "memory", "network", "battery", "sway/language"],
  
     "keyboard-state": {
         "numlock": true,
