@@ -85,9 +85,9 @@ export LANG=ru_RU.UTF-8
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
+  export EDITOR='vim'
 else
-  export EDITOR='nvim'
+  export EDITOR='vim'
 fi
 
 # Compilation flags
@@ -104,3 +104,4 @@ fi
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 alias repo="cd ~/repo"
+alias blctl="bluetoothctl"
