@@ -30,7 +30,8 @@ focus_follows_mouse yes
 
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
-output eDP-1 background #000000 solid_color
+#output eDP-1 background #ff00aa solid_color
+output eDP-1 background ~/Images/wallpapers/moon.jpg fill
 
 ## Idle configuration
 exec swayidle -w \
@@ -190,8 +191,8 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# gaps inner 5
-# gaps outer 5
+gaps inner 5
+gaps outer 3
 smart_gaps off
 
 default_border pixel 1

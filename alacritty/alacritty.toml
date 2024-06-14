@@ -47,7 +47,7 @@ color = "#a81819"
 padding = { x = 8, y = 8 }
 dynamic_padding = false
 decorations = "none"
-opacity = 1.0
+opacity = 0.65
 
 [terminal]
 osc52 = "CopyPaste"

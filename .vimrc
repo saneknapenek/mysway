@@ -11,6 +11,7 @@ set hlsearch
 set incsearch
 
 colorscheme elflord
+hi! Normal ctermbg=NONE guibg=NONE
 
 set t_Co=256
 
