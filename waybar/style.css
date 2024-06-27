@@ -7,7 +7,7 @@
 
 * {
   font-family: "BigBlueTermPlus Nerd Font", "Font Awesome 5 Free";
-  font-size: 16px;
+  font-size: 12px;
 }
   
 window#waybar {
@@ -35,7 +35,7 @@ button:hover {
 }
  
 #workspaces button {
-  padding: 0 10px;
+  padding: 0 8px;
   color: @color_clear_gray;
 }
 
@@ -80,7 +80,7 @@ button:hover {
 }
 
 #clock {
-  font-size:14px;
+  font-size:12px;
   font-weight: bold;
   padding: 0 10px;
   padding-top: 4px;

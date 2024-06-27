@@ -35,7 +35,7 @@ output eDP-1 {
 }
 
 output HDMI-A-1 {
-    background #000000 solid_color
+	background ~/Images/wallpapers/moon.jpg fill
     resolution 1920x1080@75.00Hz
 }
 
@@ -217,3 +217,8 @@ bar {
 bindsym $mod+p       exec shotman --capture window
 bindsym $mod+Shift+s exec shotman --capture region
 bindsym $mod+Shift+p  exec shotman --capture output
+
+for_window {
+	[app_id="telegram-desktop_telegram-desktop"] floating enable; border none; resize set 1500 900;
+	[app_id="ColinDuquesnoy.gitlab.com.MellowPlayer"] floating enable; border none; resize set 1400 900;
+}

@@ -1,5 +1,5 @@
 {
-    "height": 32,
+    "height": 28,
     "spacing": 6,
 
     "reload_style_on_change": true,
@@ -23,16 +23,16 @@
     "sway/workspaces": {
         "format": "{icon} {windows}",
         "format-icons": {
-            "1": " 一",
-            "2": " 二",
-            "3": " 三",
-            "4": " 四",
-            "5": " 五",
-            "6": " 六",
-            "7": " 七",
-            "8": " 八",
-            "9": " 九",
-            "10": " 〇"
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "〇"
         },
         "persistent-workspaces": {
             "1": "*",
@@ -46,7 +46,7 @@
             "9": "*",
             "10": "*"
         },
-        "format-window-separator": " | ",
+        "format-window-separator": " ",
         "window-format": "<span>{icon}</span>",
         "window-rewrite-default": "\u2022",
         "window-rewrite": {
@@ -119,11 +119,12 @@
     },
 
     "network": {
-        "format-wifi": " ",
+        "format-wifi": "{icon}",
+		"format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
         "format-ethernet": " {ifname}",
         "tooltip-format": " {ifname} via {gwaddr}",
         "format-linked": " {ifname} (No IP)",
-        "format-disconnected": "Disconnected ⚠ {ifname}",
+        "format-disconnected": "",
         "format-alt": " {ifname}: {ipaddr}/{cidr}",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)"
     },

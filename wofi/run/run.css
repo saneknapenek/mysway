@@ -9,22 +9,32 @@
 /* параметры вообще для всего */
 *{
     font-family: "BigBlueTermPlus Nerd Font";
-    font-size: 14px;
+    font-size: 12px;
+	background-color: @color_back;
 }
 
 /* параметры для окна */
 #window {
-    border-bottom: 1px solid @color_primary;
-    background-color: @color_back;
 }
 
+/* параметры для окна с приложениями */
+#inner-box {
+    margin: 0px;
+	padding 0px;
+	box-shadow: none;
+    border: none;
+} 
+
+/* параметры пространства вокруг окна wofi */
 #outer-box {
-    border-bottom: 1px solid @color_primary;
+    margin: 0px;
+    padding: 0px;
+	border: none;
+	box-shadow: none;
 }
 
 /* параметры для окна ввода */
 #input {
-    /* font-size: 10 px; */
     color: @color_clear_gray;
     padding: 0;
     margin: 1 0;
@@ -42,22 +52,6 @@
     -gtk-icon-transform:scaleX(0);
 }
 
-/* параметры для окна с приложениями */
-/* #inner-box {
-    background-color: #231f24;
-    border-radius: 10px;
-    margin: 8px 10px 10px 10px;
-    border: 1;
-} */
-
-/* параметры пространства вокруг окна wofi */
-/* #outer-box {
-    margin: 1px;
-    padding: 5px;
-    background-color: #231f24;
-    border-radius: 10px;
-} */
-
 /* параметры для полосы прокрутки */
 /* #scroll {
     background-color: #231f24;
@@ -72,14 +66,10 @@
 
 /* параметры для выделенного пункта */
 #entry:selected {
-    /* background-color: #6e6071; */
-    background-color: @color_back;
     color: @color_back;
-    /* border: 1px solid #201323; */
 }
 
 /* параметры выделенного текста */
 #text:selected {
     color: @color_primary;
-    font-size: 14px;
 }
