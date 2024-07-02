@@ -54,13 +54,14 @@
             "Chrome": "",
             "Visual Studio Code": "󰨞",
             "mellow": "󰎆",
-            "telegram": "",
+            "telegram-desktop": "",
             "Thunar": "",
             "firefox": "󰈹",
             "Writer": "",
             "Presentation": "",
             "PDF": "",
-            "Spreadsheets": ""
+            "Spreadsheets": "",
+			"DBeaver": "󰆼"
         }
     },
  

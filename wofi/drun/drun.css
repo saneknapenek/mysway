@@ -1,0 +1,86 @@
+@define-color color_back #000000;
+@define-color color_primary #63059d;
+@define-color color_seconadry #d62ad9;
+@define-color color_gray #422e42;
+@define-color color_clear_gray #8697a4;
+@define-color color_red #ff0000;
+
+
+/* параметры вообще для всего */
+*{
+    font-family: "BigBlueTermPlus Nerd Font";
+    font-size: 20px;
+}
+
+/* параметры для окна */
+#window {
+	background: rgba(0, 0, 0, 0.5);
+}
+
+/* параметры для окна с приложениями */
+#inner-box {
+    margin: 20px;
+	padding: 0px;
+	box-shadow: none;
+    border: none;
+} 
+
+/* параметры пространства вокруг окна wofi */
+#outer-box {
+    margin: 0px;
+    padding: 0px;
+	border: none;
+	box-shadow: none;
+}
+
+/* параметры для окна ввода */
+#input {
+    color: @color_clear_gray;
+    padding: 0;
+    margin: 0 300px;
+	margin-top: 30px;
+	margin-bottom: 40px;
+    border: none;
+	border-bottom: 3px solid @color_seconadry;
+    border-radius: 0px;
+    box-shadow: none;
+	background: black;
+}
+
+#input > image.left {
+    -gtk-icon-transform:scaleX(0);
+}
+
+#input > image.right {
+    -gtk-icon-transform:scaleX(0);
+}
+
+/* параметры для полосы прокрутки */
+/* #scroll {
+    background-color: #231f24;
+} */
+
+/* параметры для текста */
+#text {
+	padding-left: 8px;
+    color: @color_clear_gray;
+}
+
+#entry {
+	padding: 8;
+	margin: 20px;
+	background: black;
+	border: 3px solid @color_primary;
+}
+
+/* параметры для выделенного пункта */
+#entry:selected {
+    color: @color_back;
+	background: black;
+	border: 3px solid @color_seconadry;
+}
+
+/* параметры выделенного текста */
+#text:selected {
+    color: @color_primary;
+}

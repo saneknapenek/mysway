@@ -9,6 +9,7 @@ set $right l
 set $term alacritty
 
 set $menu wofi --conf /home/san/.config/wofi/run/run.config --style /home/san/.config/wofi/run/run.css --show run
+set $menu_drun wofi --conf /home/san/.config/wofi/drun/drun.config --style /home/san/.config/wofi/drun/drun.css --show drun
 
 
 exec_always "setxkbmap -layout us,ru -variant ,, -option grp:win_space_toggle"
@@ -66,7 +67,8 @@ bindsym $mod+Return exec $term
 bindsym $mod+q kill
 
 # Start your launcher
-bindsym $mod+d exec $menu
+bindsym $mod+d exec $menu_drun
+bindsym $mod+Shift+d exec $menu
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
@@ -129,8 +131,7 @@ bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. 
     bindsym $mod+Shift+8 move container to workspace number 8
     bindsym $mod+Shift+9 move container to workspace number 9
     bindsym $mod+Shift+0 move container to workspace number 10
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
+
 #
 # Layout stuff:
 #
@@ -219,6 +220,6 @@ bindsym $mod+Shift+s exec shotman --capture region
 bindsym $mod+Shift+p  exec shotman --capture output
 
 for_window {
-	[app_id="telegram-desktop_telegram-desktop"] floating enable; border none; resize set 1500 900;
+	[app_id="telegram-desktop_telegram-desktop"] floating enable; border none, resize set 1400 900;
 	[app_id="ColinDuquesnoy.gitlab.com.MellowPlayer"] floating enable; border none; resize set 1400 900;
 }
