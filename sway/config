@@ -29,14 +29,15 @@ input "2362:597:SYNA3602:00_093A:0255_Touchpad" {
 focus_follows_mouse yes
 
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec swww-daemon
 
 output eDP-1 {
-	background ~/Images/wallpapers/moon.jpg fill
+#	background ~/Images/wallpapers/moon.jpg fill
 	resolution 1920x1080@60.00Hz
 }
 
 output HDMI-A-1 {
-	background ~/Images/wallpapers/moon.jpg fill
+#	background ~/Images/wallpapers/moon.jpg fill
     resolution 1920x1080@75.00Hz
 }
 

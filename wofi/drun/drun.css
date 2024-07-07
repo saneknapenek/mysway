@@ -9,7 +9,6 @@
 /* параметры вообще для всего */
 *{
     font-family: "BigBlueTermPlus Nerd Font";
-    font-size: 20px;
 }
 
 /* параметры для окна */
@@ -19,8 +18,7 @@
 
 /* параметры для окна с приложениями */
 #inner-box {
-    margin: 20px;
-	padding: 0px;
+	padding: 30px 300px;
 	box-shadow: none;
     border: none;
 } 
@@ -37,7 +35,7 @@
 #input {
     color: @color_clear_gray;
     padding: 0;
-    margin: 0 300px;
+    margin: 0 600px;
 	margin-top: 30px;
 	margin-bottom: 40px;
     border: none;
@@ -45,6 +43,7 @@
     border-radius: 0px;
     box-shadow: none;
 	background: black;
+	font-size: 20px;
 }
 
 #input > image.left {
@@ -55,22 +54,17 @@
     -gtk-icon-transform:scaleX(0);
 }
 
-/* параметры для полосы прокрутки */
-/* #scroll {
-    background-color: #231f24;
-} */
-
-/* параметры для текста */
 #text {
 	padding-left: 8px;
     color: @color_clear_gray;
 }
 
 #entry {
-	padding: 8;
-	margin: 20px;
+	padding: 10px;
+	margin: 40px;
 	background: black;
 	border: 3px solid @color_primary;
+	font-size: 15px;
 }
 
 /* параметры для выделенного пункта */
