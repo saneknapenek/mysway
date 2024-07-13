@@ -79,6 +79,7 @@ plugins=(
 	zsh-autosuggestions
 	docker
 	docker-compose
+	sudo
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -112,3 +113,7 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 alias repo="cd ~/repo"
 alias blctl="bluetoothctl"
+
+. "$HOME/.cargo/env"
+PATH=$PATH:$HOME/go/bin
+
