@@ -7,7 +7,7 @@
     "modules-left": ["sway/workspaces"], 
     "modules-center": ["clock"],
     
-    "modules-right": ["sway/mode", "sway/scratchpad", "tray", "cpu", "memory", "network", "battery", "sway/language"],
+    "modules-right": ["sway/mode", "sway/scratchpad", "tray", "network", "battery", "sway/language"],
 
     // "sway/workspaces": {
     //     "format": "{windows}",
@@ -112,11 +112,13 @@
             "warning": 25,
             "critical": 10
         },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{icon} {time}",
-        "format-icons": ["", "", "", "", ""]
+        "format": "{icon}",
+        "format-charging": "󰂄",
+        "format-plugged": "",
+        // "format-alt": "{icon}",
+        // "format-icons": ["", "", "", "", ""]
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format":"{capacity}%\n\n{time}"
     },
 
     "network": {

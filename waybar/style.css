@@ -63,15 +63,11 @@ button:hover {
 }
 
 #tray {
-  padding-right: 10px;
-}
-
-#network {
-  padding-left: 10px;
+  padding-right: 5px;
 }
 
 #battery {
-  padding-left: 10px;
+  font-size: 14px;
 }
 
 #language {
