@@ -231,4 +231,6 @@ $mybindsym $mod+Shift+p  exec shotman --capture output
 for_window {
 	[app_id="telegram-desktop_telegram-desktop"] floating enable; border none, resize set 1400 900;
 	[app_id="ColinDuquesnoy.gitlab.com.MellowPlayer"] floating enable; border none; resize set 1400 900;
+	[title="Telegram Desktop - Thunar"] floating enable; resize set 1200 700;
+	[title="Открытие файла"] floating enable; resize set 1200 700;
 }
