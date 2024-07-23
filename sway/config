@@ -32,7 +32,7 @@ input "2362:597:SYNA3602:00_093A:0255_Touchpad" {
 focus_follows_mouse yes
 
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-exec swww-daemon
+#exec swww-daemon
 exec mako
 
 $mybindsym $mod+t exec notify-send "$(date)"
@@ -41,6 +41,7 @@ $mybindsym $mod+n exec makoctl reload
 
 output eDP-1 {
 	resolution 1920x1080@75.00Hz
+	background #111111 solid_color
 }
 
 output HDMI-A-1 {
@@ -60,7 +61,7 @@ exec swayidle -w \
 $mybindsym $mod+o exec swaylock --config /home/san/.config/swaylock/config
 
 set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
-exec_always rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
+exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
 
 $mybindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && pactl get-sink-volume @DEFAULT_SINK@ | awk 'NR==1{print substr($5,1,length($5)-1)}' > $WOBSOCK
 $mybindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% && pactl get-sink-volume @DEFAULT_SINK@ | awk 'NR==1{print substr($5,1,length($5)-1)}' > $WOBSOCK
@@ -104,7 +105,6 @@ $mybindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcu
     $mybindsym $mod+Down focus down
     $mybindsym $mod+Up focus up
     $mybindsym $mod+Right focus right
-
     # Move the focused window with the same, but add Shift
     $mybindsym $mod+Shift+$left move left
     $mybindsym $mod+Shift+$down move down
@@ -166,14 +166,7 @@ $mybindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcu
 #
 # Scratchpad:
 #
-    # Sway has a "scratchpad", which is a bag of holding for windows.
-    # You can send windows there and get them back later.
-
-    # Move the currently focused window to the scratchpad
     $mybindsym $mod+Shift+minus move scratchpad
-
-    # Show the next scratchpad window or hide the focused scratchpad window.
-    # If there are multiple scratchpad windows, this command cycles through them.
     $mybindsym $mod+minus scratchpad show
 
 #
@@ -203,20 +196,21 @@ $mybindsym $mod+r mode "resize"
 
 gaps inner 5
 gaps outer 3
-smart_gaps off
+smart_gaps on
 
-default_border pixel 1
-default_floating_border pixel 1
+default_border pixel 2
+default_floating_border pixel 3
 
-for_window [tiling] border pixel 1
-for_window [floating] border pixel 2
+for_window [tiling] border pixel 2
+for_window [floating] border pixel 3
 
 smart_borders on
 
-client.unfocused #63059d #63059d #63059d
-client.focused #d62ad9 #d62ad9 #d62ad9
-client.urgent #ff0000 #63059d #ff0000
-client.placeholder #63059d #63059d #63059d
+client.unfocused            #343457 #343457 #343457
+client.focused              #6363c4 #6363c4 #6363c4
+client.focused_inactive     #343457 #343457 #343457
+client.urgent               #8e1c1c #343457 #8e1c1c
+client.placeholder          #343457 #343457 #343457
 
 
 bar {
