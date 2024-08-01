@@ -18,22 +18,19 @@ on-notify=exec mpv /usr/share/sounds/freedesktop/stereo/message.oga
 
 # [ STYLE OPTIONS ]
 # which installed font for notification( any font installed )
-font= BigBlueTermPlus Nerd Font 9
+font= BigBlueTermPlus Nerd Font 10
 
-# background color of notification( #RRGGBB | #RRGGBBAA )
-background-color=#000000CA
+background-color=#111111
+text-color=#6363c4
+#width=299
+#height=99
+border-color=#343457
+progress-color=over #0b1c1c
 
-# Text color inside the notification( #RRGGBB | #RRGGBBAA )
-text-color=#8697a4
 
-# Set width of notification popup.( value in px )
-width=299
-
-# maximum height of notification( value in px )
-height=99
 
 # margin of notification which is margin for the list of notification block( value in px ).
-outer-margin= 7,3,0,0
+outer-margin= 7,0,0,0
 # Margin of each individual notification
 margin= 0,0,10,0
 
@@ -41,22 +38,20 @@ margin= 0,0,10,0
 padding=16
 
 #Set popup border size to px pixels.(value in px )
-border-size=1
+border-size=2
 
 # color of border of each notification( #RRGGBB | #RRGGBBAA )
-border-color=#d62ad9
 
 # bordear radious of each notification(value in px )
 border-radius=0
 
 # Set popup progress indicator color to color.( value [over|source] ( #RRGGBB | #RRGGBBAA ))
-progress-color=over #0b1c1c
 
 # Show icons in notifications.( value: -1 | 1 )
 icons=1
 
 #  Set maximum icon size to px pixels.(value in px)
-max-icon-size=34
+max-icon-size=38
 
 # Paths to search for icons when a notification specifies a name instead of a full path.(value path[:path...] )
 
@@ -77,7 +72,7 @@ history=1
 format= <b>%s</b>\n%b
 
 #  Set notification text alignment.( value: left|right|center )
-text-alignment=center
+text-alignment=left
 
 # Set the default timeout to timeout in milliseconds.
 default-timeout=10000

@@ -37,7 +37,9 @@ exec mako
 
 $mybindsym $mod+t exec notify-send "$(date)"
 #bindsym $mod+n exec makoctl dismiss
-$mybindsym $mod+n exec makoctl reload
+#$mybindsym $mod+n exec makoctl reload
+$mybindsym $mod+n exec iwctl station wlan0 disconnect
+$mybindsym $mod+Shift+n exec iwctl station wlan0 connect "HP LaserJet Pro M211dw"
 
 output eDP-1 {
 	resolution 1920x1080@75.00Hz
@@ -227,4 +229,6 @@ for_window {
 	[app_id="ColinDuquesnoy.gitlab.com.MellowPlayer"] floating enable; border none; resize set 1400 900;
 	[title="Telegram Desktop - Thunar"] floating enable; resize set 1200 700;
 	[title="Открытие файла"] floating enable; resize set 1200 700;
+	[app_id="xdg-desktop-portal-gtk"] floating enable; resize set 1200 700;
+	[app_id="qalculate-gtk"] floating enable; resize set 1000 500;
 }
