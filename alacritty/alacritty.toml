@@ -5,7 +5,7 @@ bold = { family = "Source Code Pro", style = "Bold" }
 italic = { family = "Source Code Pro", style = "Italic" }
 
 [shell]
-# program = "tmux"
+program = "zsh"
 
 [cursor]
 style = { shape = "Block", blinking = "Always" }
@@ -43,7 +43,7 @@ white = "#ffffff"
 [bell]
 duration = 150
 color = "#a81819"
-animation = "Expo"
+animation = "Ease"
 
 [window]
 padding = { x = 16, y = 12 }
