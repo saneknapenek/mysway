@@ -11,7 +11,8 @@ set $right l
 
 set $term alacritty
 
-set $menu wofi --conf /home/san/.config/wofi/run/run.config --style /home/san/.config/wofi/run/run.css --show run
+# set $menu wofi --conf /home/san/.config/wofi/run/run.config --style /home/san/.config/wofi/run/run.css --show run
+set $menu tofi-run --config ~/repo/mysway/tofi/run.ini | xargs swaymsg exec --
 set $menu_drun wofi --conf /home/san/.config/wofi/drun/drun.config --style /home/san/.config/wofi/drun/drun.css --show drun
 
 
