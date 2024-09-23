@@ -231,10 +231,11 @@ $mybindsym $mod+Shift+s exec shotman --capture region
 $mybindsym $mod+Shift+p  exec shotman --capture output
 
 for_window {
-	[app_id="telegram-desktop_telegram-desktop"] floating enable; border none, resize set 1400 900;
+	[app_id="telegram-desktop_telegram-desktop"] floating enable; border none, resize set 1400 1000;
 	[app_id="ColinDuquesnoy.gitlab.com.MellowPlayer"] floating enable; border none; resize set 1400 900;
-	[title="Telegram Desktop - Thunar"] floating enable; resize set 1200 700;
+	[title="Telegram Desktop - Thunar"] floating enable; resize set 1200 800;
 	[title="Открытие файла"] floating enable; resize set 1200 700;
 	[app_id="xdg-desktop-portal-gtk"] floating enable; resize set 1200 700;
 	[app_id="qalculate-gtk"] floating enable; resize set 1000 500;
+	[class="obsidian"] floating enable; resize set 1500 900;
 }

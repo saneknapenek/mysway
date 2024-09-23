@@ -78,8 +78,7 @@
         "format-charging": "󰂄",
         "format-plugged": "",
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-        "tooltip-format": "{capacity}%\n\n{time}",
-        "format-alt": "{icon} {capacity}%"
+        "tooltip-format": "{capacity}%\n\n{time}"
     },
 
     "network": {

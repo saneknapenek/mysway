@@ -7,19 +7,31 @@
 @define-color c_orange #9f6f17;
 
 * {
+  /* all: initial; */
   font-family: "BigBlueTermPlus Nerd Font", "Font Awesome 5 Free";
   font-size: 12px;
 }
-  
+
 window#waybar {
   background: transparent;
   background-color: @c_black;
 }
-  
+ 
 #window {
   font-family: "BigBlueTermPlus Nerd Font";
 }
-  
+
+tooltip {
+  background: @c_black;
+  border: 2px solid @c_dblue;
+  border-radius: 0;
+}
+
+tooltip label {
+  color: @c_blue;
+  padding: 5px;
+}
+ 
 button {
   border: none;
   border-radius: 0;
@@ -34,11 +46,14 @@ button:hover {
 
 #workspaces {
   border: 2px solid @c_dblue;
+  color: @c_blue;
+  background-color: @c_black;
 }
  
 #workspaces button {
   padding: 0 8px;
   color: @c_blue;
+  background-color: @c_black;
 }
 
 #workspaces button.focused {
@@ -56,7 +71,6 @@ button:hover {
 
 #tray {
   padding: 0 10px;
-  border: 2px solid @c_dblue;
 }
 
 #clock {

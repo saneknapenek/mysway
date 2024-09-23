@@ -1,11 +1,11 @@
 #!/bin/bash
 
-DEVICE=${1:-wlan0}
+DEVICE=wlan0
 CONFIG="/home/san/repo/mysway/tofi/wifi.ini"
 
 iwctl station $DEVICE scan
 
-CURR_SSID=$(iwctl station $DEVICE show | sed -n 's/^\s*Connected\snetwork\s*\(\S*\)\s*$/\1/p')
+CURR_SSID=$(iwctl station wlan0 show | xargs | sed -n 's/.*Connected network \(.*\) IPv4 address.*/\1/p')
 IW_NETWORKS+=$(iwctl station $DEVICE get-networks | sed '/^--/d')
 IW_NETWORKS=$(echo "$IW_NETWORKS" | sed 1,4d)
 IW_NETWORKS=$(echo "$IW_NETWORKS" | sed -r "s/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g")
@@ -14,11 +14,12 @@ PREFIX='> '
 NETWORK_LIST=""
 while IFS= read -r line; do
 	line=${line:6}
-	SSID_NAME=$(echo "$line" | sed 's/\(\s*psk.*\)//')
-	printf -v pad %36s
+	SSID_NAME=$(echo "$line" | awk '{$NF=""; $(NF-1)=""; print $0}' | xargs)
+	ENCR=$(echo "$line" | awk '{print $(NF-1)}')
+	printf -v pad %38s
 	line=$SSID_NAME$pad
-	line=${line:0:36}
-	line+=$'PSK'
+	line=${line:0:38}
+	line+="${ENCR^^}"
 	line+=$'\n'
 	if [ "$SSID_NAME" = "$CURR_SSID" ]; then
 		PREFIX+=$line
