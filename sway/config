@@ -45,11 +45,12 @@ $mybindsym $mod+Shift+n exec iwctl station wlan0 connect "HP LaserJet Pro M211dw
 output eDP-1 {
 	resolution 1920x1080@75.00Hz
 	background #111111 solid_color
+	# background /home/san/Images/tiago-calliari-anyone.jpg fill
 }
 
 output HDMI-A-1 {
 	#background ~/Images/wallpapers/moon.jpg fill
-	background #000000 solid_color
+	background #111111 solid_color
     resolution 1920x1080@75.00Hz
 }
 
