@@ -4,10 +4,10 @@
 
     "reload_style_on_change": true,
     
-    "modules-left": ["sway/workspaces"], 
-    "modules-center": ["clock"],
+    "modules-left": ["sway/workspaces", "sway/mode"], 
+    "modules-center": ["clock", "group/datetime"],
     
-    "modules-right": ["sway/scratchpad", "tray", "group/main"],
+    "modules-right": ["tray", "sway/scratchpad", "group/main"],
 
     "sway/workspaces": {
         "format": "{icon}",
@@ -99,6 +99,10 @@
         "tooltip": true,
         "tooltip-format": "{app}"
     },
+
+	"sway/mode": {
+		"format": ""
+	},
 
     "group/main": {
         "orientation": "inherit",

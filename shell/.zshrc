@@ -119,6 +119,10 @@ PATH=$PATH:$HOME/go/bin
 PATH=$PATH:/usr/local/go/bin
 PATH=$PATH:$HOME/.local/bin
 
+export RUSTFLAGS="-C target-cpu=native"
+export QT_QPA_PLATFORMTHEME="qt5ct"
+export GTK_THEME="oomox-blueDark"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
