@@ -58,6 +58,12 @@ hide_when_typing = true
 
 [keyboard]
 bindings = [
-{ key = "k", mods = "Control", action = "ScrollLineUp" },
-{ key = "j", mods = "Control", action = "ScrollLineDown" },
+    { key = "k", mods = "Alt", action = "ScrollLineUp" },
+    { key = "j", mods = "Alt", action = "ScrollLineDown" },
+    { key = "h", mods = "Alt", chars = "\u001b[D" },
+    { key = "l", mods = "Alt", chars = "\u001b[C" },
+    { key = "^", mods = "Alt|Shift", chars = "\u001bOH" },
+    { key = "$", mods = "Alt|Shift", chars = "\u001bOF" },
+    { key = "L", mods = "Alt|Shift", chars = "\u001b[1;5C" },
+    { key = "H", mods = "Alt|Shift", chars = "\u001b[1;5D" }
 ]

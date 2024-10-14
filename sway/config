@@ -54,7 +54,7 @@ output HDMI-A-1 {
 	#background ~/Images/wallpapers/moon.jpg fill
 	background #111111 solid_color
     resolution 1920x1080@75.00Hz
-	position 1920 0
+	# position 0 1920
 }
 
 ## Idle configuration
@@ -243,6 +243,7 @@ for_window {
 	[app_id="qalculate-gtk"] floating enable; resize set 1000 500;
 	[class="obsidian"] floating enable; resize set 1500 900;
 	[title="ueberzugpp"] border none;
+	[app_id="org.qbittorrent.qBittorrent"] floating enable; border none; resize set 1400 900;
 }
 
 
