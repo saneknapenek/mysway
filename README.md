@@ -9,6 +9,7 @@
 - [tofi](https://github.com/philj56/tofi?tab=readme-ov-file)
 - [swaylock](https://github.com/swaywm/swaylock "Screen locking utility")
 - [wob](https://github.com/francma/wob "A lightweight overlay volume/backlight/progress/anything bar")
+- brightnessctl
 
 #### Files
 
