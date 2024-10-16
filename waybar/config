@@ -104,9 +104,15 @@
 		"format": ""
 	},
 
+    "wireplumber": {
+        "format": "{icon}",
+        "format-muted": ""
+    },
+
     "group/main": {
         "orientation": "inherit",
 		"modules": [
+            "wireplumber",
             "network",
 			"battery",
 			"sway/language"
