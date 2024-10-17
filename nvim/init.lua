@@ -49,6 +49,11 @@ Plug('https://github.com/preservim/tagbar') -- depends on [ctag](https://github.
 Plug('romgrk/barbar.nvim')
 Plug('nvim-tree/nvim-web-devicons')
 
+-- Plug('rktjmp/lush.nvim')
+-- Plug('~/repo/mysway/nvim/themes/my-neovim-theme')
+
+Plug('rebelot/kanagawa.nvim')
+
 vim.call('plug#end')
 
 require('plugins.nerdtree')
@@ -58,4 +63,19 @@ require('plugins.tagbar')
 require('plugins.barbar')
 require('plugins.treesitter')
 
-vim.cmd('silent! colorscheme default') 
+-- require('plugins.kanagawa')
+require('kanagawa').setup({
+overrides = function(colors)
+    return {
+			-- Assign a static color to strings
+        	String = { fg = colors.palette.carpYellow, italic = true },
+        	-- theme colors will update dynamically when you change theme!
+        	SomePluginHl = { fg = colors.theme.syn.type, bold = true },
+        }
+    end,
+})
+
+require('lspconfig').pyright.setup{}
+require('lspconfig').rust_analyzer.setup{}
+
+vim.cmd('silent! colorscheme kanagawa-dragon') 
