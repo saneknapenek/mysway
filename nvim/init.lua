@@ -62,6 +62,7 @@ require('plugins.gitsigns')
 require('plugins.tagbar')
 require('plugins.barbar')
 require('plugins.treesitter')
+require('plugins.lsp')
 
 -- require('plugins.kanagawa')
 require('kanagawa').setup({
