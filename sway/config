@@ -248,5 +248,5 @@ for_window {
 
 
 
-exec_always $term
+# exec_always $term
 
