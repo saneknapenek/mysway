@@ -9,6 +9,7 @@ vim.opt.mouse = 'a'
 vim.opt.wrap = false
 vim.opt.encoding = 'UTF-8'
 vim.opt.clipboard = 'unnamedplus'
+vim.opt.signcolumn = "yes"
 
 local vim = vim
 local Plug = vim.fn['plug#']
@@ -22,22 +23,6 @@ Plug ('hrsh7th/cmp-path')
 Plug ('hrsh7th/cmp-cmdline')
 Plug ('hrsh7th/nvim-cmp')
 
--- Для пользователей vsnip.
--- Plug ('hrsh7th/cmp-vsnip')
--- Plug ('hrsh7th/vim-vsnip')
-
--- Для пользователей luasnip.
--- Plug ('L3MON4D3/LuaSnip')
--- Plug ('saadparwaiz1/cmp_luasnip')
-
--- Для пользователей ultisnips.
--- Plug ('SirVer/ultisnips')
--- Plug ('quangnguyen30192/cmp-nvim-ultisnips')
-
--- Для пользователей snippy.
--- Plug ('dcampos/nvim-snippy')
--- Plug ('dcampos/cmp-snippy')
-
 Plug('https://github.com/nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 Plug('https://github.com/lewis6991/gitsigns.nvim')
 Plug('preservim/nerdtree')
@@ -48,6 +33,9 @@ Plug('nvim-telescope/telescope.nvim') -- depends on ripgrep, fd
 Plug('https://github.com/preservim/tagbar') -- depends on [ctag](https://github.com/universal-ctags/ctags)
 Plug('romgrk/barbar.nvim')
 Plug('nvim-tree/nvim-web-devicons')
+
+Plug('ray-x/go.nvim')
+Plug('ray-x/guihua.lua')
 
 -- Plug('rktjmp/lush.nvim')
 -- Plug('~/repo/mysway/nvim/themes/my-neovim-theme')
@@ -63,6 +51,9 @@ require('plugins.tagbar')
 require('plugins.barbar')
 require('plugins.treesitter')
 require('plugins.lsp')
+require('plugins.cmp')
+require('plugins.go_nvim')
+
 
 -- require('plugins.kanagawa')
 require('kanagawa').setup({
@@ -76,7 +67,7 @@ overrides = function(colors)
     end,
 })
 
-require('lspconfig').pyright.setup{}
-require('lspconfig').rust_analyzer.setup{}
+-- require('lspconfig').pyright.setup{}
+-- require('lspconfig').rust_analyzer.setup{}
 
 vim.cmd('silent! colorscheme kanagawa-dragon') 
