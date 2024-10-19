@@ -54,20 +54,9 @@ require('plugins.lsp')
 require('plugins.cmp')
 require('plugins.go_nvim')
 
-
--- require('plugins.kanagawa')
-require('kanagawa').setup({
-overrides = function(colors)
-    return {
-			-- Assign a static color to strings
-        	String = { fg = colors.palette.carpYellow, italic = true },
-        	-- theme colors will update dynamically when you change theme!
-        	SomePluginHl = { fg = colors.theme.syn.type, bold = true },
-        }
-    end,
-})
+require('plugins.kanagawa')
 
 -- require('lspconfig').pyright.setup{}
 -- require('lspconfig').rust_analyzer.setup{}
 
-vim.cmd('silent! colorscheme kanagawa-dragon') 
+ vim.cmd('silent! colorscheme kanagawa')
