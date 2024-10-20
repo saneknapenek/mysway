@@ -16,12 +16,15 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 
-Plug ('neovim/nvim-lspconfig')
-Plug ('hrsh7th/cmp-nvim-lsp')
-Plug ('hrsh7th/cmp-buffer')
-Plug ('hrsh7th/cmp-path')
-Plug ('hrsh7th/cmp-cmdline')
-Plug ('hrsh7th/nvim-cmp')
+Plug('neovim/nvim-lspconfig')
+
+Plug('hrsh7th/cmp-nvim-lsp')
+Plug('hrsh7th/cmp-buffer')
+Plug('hrsh7th/cmp-path')
+Plug('hrsh7th/cmp-cmdline')
+Plug('hrsh7th/nvim-cmp')
+Plug('Snikimonkd/cmp-go-pkgs')
+Plug('vrslev/cmp-pypi')
 
 Plug('https://github.com/nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 Plug('https://github.com/lewis6991/gitsigns.nvim')
@@ -40,6 +43,7 @@ Plug('ray-x/guihua.lua')
 -- Plug('rktjmp/lush.nvim')
 -- Plug('~/repo/mysway/nvim/themes/my-neovim-theme')
 
+Plug('startup-nvim/startup.nvim')
 Plug('rebelot/kanagawa.nvim')
 
 vim.call('plug#end')
@@ -54,6 +58,7 @@ require('plugins.lsp')
 require('plugins.cmp')
 require('plugins.go_nvim')
 
+require('plugins.startup')
 require('plugins.kanagawa')
 
 -- require('lspconfig').pyright.setup{}
