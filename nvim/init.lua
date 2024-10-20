@@ -11,6 +11,9 @@ vim.opt.encoding = 'UTF-8'
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.signcolumn = "yes"
 
+vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
+vim.keymap.set('v', '<C-c>', '"+y')
+
 local vim = vim
 local Plug = vim.fn['plug#']
 
@@ -36,6 +39,7 @@ Plug('nvim-telescope/telescope.nvim') -- depends on ripgrep, fd
 Plug('https://github.com/preservim/tagbar') -- depends on [ctag](https://github.com/universal-ctags/ctags)
 Plug('romgrk/barbar.nvim')
 Plug('nvim-tree/nvim-web-devicons')
+Plug('m4xshen/autoclose.nvim')
 
 Plug('ray-x/go.nvim')
 Plug('ray-x/guihua.lua')
@@ -54,6 +58,7 @@ require('plugins.gitsigns')
 require('plugins.tagbar')
 require('plugins.barbar')
 require('plugins.treesitter')
+require('plugins.autoclose')
 require('plugins.lsp')
 require('plugins.cmp')
 require('plugins.go_nvim')

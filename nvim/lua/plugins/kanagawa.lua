@@ -49,7 +49,6 @@ require('kanagawa').setup({
 			Pmenu = { fg = colors.c_dblue, bg = colors.c_ddblue },
 			PmenuSel = { fg = colors.c_pink, bg = colors.c_dblue },
 			Cmdline = { fg = colors.c_green, bg = colors.c_green },
-			-- CmdlineInput = { fg = "#ff4da6", bg = "NONE" },
 			TabLine = { fg = colors.c_blue, bg = colors.c_ddblue },
 			TabLineSel = { fg = colors.c_pink, bg = colors.c_dblue },
 			TabLineFill = { fg = colors.c_blue, bg = colors.c_ddblue },
