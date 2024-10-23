@@ -4,9 +4,6 @@ normal = { family = "Source Code Pro", style = "Regular" }
 bold = { family = "Source Code Pro", style = "Bold" }
 italic = { family = "Source Code Pro", style = "Italic" }
 
-[shell]
-program = "zsh"
-
 [cursor]
 style = { shape = "Block", blinking = "Always" }
 blink_interval = 600
@@ -51,6 +48,7 @@ dynamic_padding = false
 decorations = "Full"
 
 [terminal]
+shell = "zsh"
 osc52 = "CopyPaste"
 
 [mouse]
