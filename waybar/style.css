@@ -7,131 +7,127 @@
 @define-color c_orange #9f6f17;
 
 * {
-  /* all: initial; */
-  font-family: "BigBlueTermPlus Nerd Font", "Font Awesome 5 Free";
-  font-size: 12px;
+	/* all: initial; */
+  	font-family: "BigBlueTermPlus Nerd Font", "Font Awesome 5 Free";
+  	font-size: 12px;
+	border-radius: 5px;
 }
 
 window#waybar {
-  background: transparent;
-  /*background-color: @c_black;*/
+	background: transparent;
 }
  
 #window {
-  font-family: "BigBlueTermPlus Nerd Font";
+	font-family: "BigBlueTermPlus Nerd Font";
 }
 
 tooltip {
-  background: @c_black;
-  border: 2px solid @c_dblue;
-  border-radius: 0;
+	background: @c_black;
+  	border: 2px solid @c_dblue;
+  	border-radius: 0;
 }
 
 tooltip label {
-  color: @c_blue;
-  padding: 5px;
+	color: @c_blue;
+  	padding: 5px;
 }
  
 button {
-  border: none;
-  border-radius: 0;
+	border: none;
+  	border-radius: 0;
 }
 
 button:hover {
-  box-shadow: none;
-  text-shadow: none;
-  background: none;
-  border: none;
+	box-shadow: none;
+  	text-shadow: none;
+  	background: none;
+  	border: none;
 }
 
 #workspaces {
-  border: 2px solid @c_dblue;
-  color: @c_blue;
-  background-color: @c_black;
+	border: 2px solid @c_dblue;
+  	color: @c_blue;
+  	background-color: @c_black;
 }
  
 #workspaces button {
-  padding: 0 8px;
-  color: @c_blue;
-  background-color: @c_black;
+	padding: 1 8px;
+  	color: @c_blue;
+  	background-color: @c_black;
+	border-radius: 5px;
 }
 
 #workspaces button.focused {
-  box-shadow: inset 0 0px @c_pink;
-  color: @c_pink;
+	box-shadow: inset 0 0px @c_pink;
+  	color: @c_pink;
 }
 
 #workspaces button.urgent {
-  color: @c_red;
+	color: @c_red;
 }
 
 #workspaces button.persistent {
-  color: @c_dblue;
+	color: @c_dblue;
 }
 
 #tray {
-  padding: 0 5px;
-  background: transparent;
+	padding: 0 5px;
+  	background: transparent;
 }
 
 #clock {
-  font-size:12px;
-  font-weight: bold;
-  padding: 0 10px;
-  color: @c_blue;
-  border: 2px solid @c_dblue;
-  background: @c_black;
+	font-size:12px;
+  	font-weight: bold;
+  	padding: 0 10px;
+  	color: @c_blue;
+  	border: 2px solid @c_dblue;
+  	background: @c_black;
 }
 
 #language {
-  color: @c_pink;
-  padding: 0;
-  padding-right: 12px;
-
+	color: @c_pink;
+  	padding: 0;
+  	padding-right: 12px;
 }
 
 #battery {
-  font-size: 14px;
-  color: @c_blue;
-  padding: 0;
-  padding-right: 12px;
+	font-size: 14px;
+  	color: @c_blue;
+  	padding: 0;
+  	padding-right: 12px;
 }
 
 #battery.warning:not(.charging) {
-  color: @c_orange;
+	color: @c_orange;
 }
   
 #battery.critical:not(.charging) {
-  color: @c_red;
+	color: @c_red;
 }
 
 #network {
-  color: @c_green;
-  padding: 0; 
-  padding-right: 16px;
-  padding-left: 8px;
+	color: @c_green;
+  	padding: 0; 
+  	padding-right: 16px;
+  	padding-left: 8px;
 }
 
 #network.disconnected {
-  color: @c_red;
+	color: @c_red;
 }
 
 #tray > .passive {
-  -gtk-icon-effect: dim;
+	-gtk-icon-effect: dim;
 }
 
 #tray > .needs-attention {
-  -gtk-icon-effect: highlight;
-  background-color: @c_red;
+	-gtk-icon-effect: highlight;
+  	background-color: @c_red;
 }
 
 #scratchpad {
-  padding-right: 10px;
-  color: @c_blue;
-}
-
-#main {
-  border: 2px solid @c_dblue;
+	padding-right: 10px;
+	color: @c_blue;
 }
 
 #mode {
@@ -150,4 +146,9 @@ button:hover {
 
 #wireplumber.muted {
     color: @c_red;
+}
+
+#main {
+	background: @c_black;
+	border: 2px solid @c_dblue;
 }
