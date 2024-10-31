@@ -245,6 +245,7 @@ for_window {
 	[class="obsidian"] floating enable; resize set 1500 900;
 	[title="ueberzugpp"] border none;
 	[app_id="org.qbittorrent.qBittorrent"] floating enable; border none; resize set 1400 900;
+	[app_id="soffice"] floating enable; border none; resize set 1200 700;
 }
 
 

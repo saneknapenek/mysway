@@ -52,8 +52,6 @@ function utils.ChooseDirectory(dir)
                 if last_modified_file then
                     vim.cmd('edit ' .. last_modified_file)
                 end
-
-				vim.cmd('NERDTree')
             end)
             return true
         end,
