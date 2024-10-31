@@ -1,0 +1,6 @@
+#!/bin/zsh
+
+alias repo="cd ~/repo"
+alias blctl="bluetoothctl"
+alias vim="nvim"
+alias lz="lazygit"

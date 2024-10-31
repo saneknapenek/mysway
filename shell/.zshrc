@@ -1,16 +1,15 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
+# Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
+# load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-
-#ZSH_THEME="robbyrussell"
-ZSH_THEME="mytheme"
+# ZSH_THEME="comfyline"
+ZSH_THEME="my-zsh-theme"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -73,13 +72,13 @@ ZSH_THEME="mytheme"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git
-	zsh-syntax-highlighting
-	fast-syntax-highlighting
-	zsh-autosuggestions
-	docker
-	docker-compose
-	sudo
+        git
+        zsh-syntax-highlighting
+        fast-syntax-highlighting
+        zsh-autosuggestions
+        docker
+        docker-compose
+        sudo
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -88,41 +87,31 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
+# Compilation flags
+# export ARCHFLAGS="-arch $(uname -m)"
+
+# Set personal aliases, overriding those provided by Oh My Zsh libs,
+# plugins, and themes. Aliases can be placed here, though Oh My Zsh
+# users are encouraged to define aliases within a top-level file in
+# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
+# - $ZSH_CUSTOM/aliases.zsh
+# - $ZSH_CUSTOM/macos.zsh
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
 export LANG=ru_RU.UTF-8
 
-# Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
   export EDITOR='vim'
 fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-fpath+=${ZDOTDIR:-~}/.zsh_functions
+export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:/home/san/.local/bin
 
-alias repo="cd ~/repo"
-alias blctl="bluetoothctl"
-
-# . "$HOME/.cargo/env"
-PATH=$PATH:$HOME/go/bin
-PATH=$PATH:/usr/local/go/bin
-PATH=$PATH:$HOME/.local/bin
-
-export RUSTFLAGS="-C target-cpu=native"
-export QT_QPA_PLATFORMTHEME="qt5ct"
-export GTK_THEME="oomox-blueDark"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source ~/.aliases
