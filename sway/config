@@ -11,10 +11,8 @@ set $right l
 
 set $term alacritty
 
-# set $menu wofi --conf /home/san/.config/wofi/run/run.config --style /home/san/.config/wofi/run/run.css --show run
 set $menu tofi-run --config ~/repo/mysway/tofi/run.ini | xargs swaymsg exec --
-set $menu_drun wofi --conf /home/san/.config/wofi/drun/drun.config --style /home/san/.config/wofi/drun/drun.css --show drun
-
+set $menu_drun rofi -show drun
 
 exec_always "setxkbmap -layout us,ru -variant ,, -option grp:win_space_toggle"
 
@@ -232,7 +230,7 @@ bar {
 #screenshots
 $mybindsym $mod+p       exec shotman --capture window
 $mybindsym $mod+Shift+s exec shotman --capture region
-$mybindsym $mod+Shift+p  exec shotman --capture output
+$mybindsym $mod+Shift+p exec shotman --capture output
 
 for_window {
 	[app_id="telegram-desktop_telegram-desktop"] floating enable; border none, resize set 1400 1000;
@@ -247,8 +245,4 @@ for_window {
 	[app_id="org.qbittorrent.qBittorrent"] floating enable; border none; resize set 1400 900;
 	[app_id="soffice"] floating enable; border none; resize set 1200 700;
 }
-
-
-
-# exec_always $term
 
