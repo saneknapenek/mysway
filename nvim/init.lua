@@ -40,6 +40,10 @@ Plug('https://github.com/preservim/tagbar') -- depends on [ctag](https://github.
 Plug('romgrk/barbar.nvim')
 Plug('nvim-tree/nvim-web-devicons')
 Plug('m4xshen/autoclose.nvim')
+Plug('karb94/neoscroll.nvim')
+Plug('kylechui/nvim-surround')
+
+Plug('lukas-reineke/indent-blankline.nvim')
 
 Plug('ray-x/go.nvim')
 Plug('ray-x/guihua.lua')
@@ -62,6 +66,9 @@ require('plugins.autoclose')
 require('plugins.lsp')
 require('plugins.cmp')
 require('plugins.go_nvim')
+require('plugins.neoscroll')
+require('plugins.surround')
+require('plugins.ibl')
 
 require('plugins.startup')
 require('plugins.kanagawa')
@@ -69,4 +76,4 @@ require('plugins.kanagawa')
 -- require('lspconfig').pyright.setup{}
 -- require('lspconfig').rust_analyzer.setup{}
 
- vim.cmd('silent! colorscheme kanagawa')
+vim.cmd('silent! colorscheme kanagawa')

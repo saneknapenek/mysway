@@ -24,6 +24,7 @@ require('telescope').setup({
       		"--glob=!**/yarn.lock",
       		"--glob=!**/package-lock.json",
       		"--glob=!**/venv/*",
+      		"--glob=!**/__pycache__/*",
 		},
 	},
 	pickers = {
@@ -41,6 +42,7 @@ require('telescope').setup({
 				"--glob=!**/yarn.lock",
 				"--glob=!**/package-lock.json",
 				"--glob=!**/venv/*",
+				"--glob=!**/__pycache__/*",
 			},
 		},
 	},
