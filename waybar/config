@@ -8,7 +8,7 @@
     "modules-left": ["sway/workspaces", "sway/mode"], 
     "modules-center": ["clock", "group/datetime"],
     
-    "modules-right": ["tray", "sway/scratchpad", "group/main"],
+    "modules-right": ["tray", "sway/scratchpad", "custom/weather", "group/main"],
 
     "sway/workspaces": {
         "format": "{icon}",
@@ -118,5 +118,15 @@
 			"battery",
 			"sway/language"
 		]
-	}
+	},
+
+	"custom/weather": {
+        "format": "{}",
+        "format-alt": "{alt}: {}",
+        "format-alt-click": "click-right",
+        "interval": 1800,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/weather.sh",
+        "exec-if": "ping wttr.in -c1"
+    }
 }
