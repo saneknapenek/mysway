@@ -36,7 +36,12 @@ weather=($(cat $cachedir/$cachefile))
 # Restore IFSClear
 IFS=$SAVEIFS
 
-temperature=$(echo ${weather[2]} | sed -E 's/([[:digit:]]+)\.\./\1 to /g')
+temp=${weather[2]}
+feelslike=${weather[0]}
+desc=${weather[3]}
+desc_ru=${weather[1]}
+windspeed=${weather[4]}
+area=${weather[5]}
 
 case $(echo ${weather[3]##*,} | tr '[:upper:]' '[:lower:]') in
 "clear" | "sunny")
@@ -77,10 +82,8 @@ case $(echo ${weather[3]##*,} | tr '[:upper:]' '[:lower:]') in
     ;;
 *)
     condition=""
-	# echo -e "{\"text\":\""$temperature"°C "$condition"\", \"alt\":\""${weather[0]}"°C\", \"tooltip\":\""${weather[5]}"\n"$temperature"°C\nОщущается как "${weather[0]}"°C\n"${weather[1]}"\nВетер "${weather[4]}"Км/ч\"}"
-	echo -e "{\"text\":\""$temperature"°C "$condition"\", \"alt\":\""${weather[0]}"°C\", \"tooltip\":\"\"}"
+	echo -e "{\"text\":\""$temp"°C "$condition"\", \"alt\":\""$feelslike"°C\", \"tooltip\":\""$area"\r"$temp"°C\r"$desc_ru"\rОщущается как\r"$feelslike"°C\rВетер "$windspeed"Км/ч\"}"
     ;;
 esac
 
-# echo -e "{\"text\":\""$temperature"°C "$condition"\", \"alt\":\""${weather[0]}"°C\", \"tooltip\":\""${weather[5]}"\n"$temperature"°C\nОщущается как "${weather[0]}"°C\n"${weather[1]}"\nВетер "${weather[4]}"Км/ч\"}"
-echo -e "{\"text\":\""$temperature"°C "$condition"\", \"alt\":\""${weather[0]}"°C\", \"tooltip\":\"\"}"
+echo -e "{\"text\":\""$temp"°C "$condition"\", \"alt\":\""$feelslike"°C\", \"tooltip\":\""$area"\r"$temp"°C\r"$desc_ru"\rОщущается как\r"$feelslike"°C\rВетер "$windspeed"Км/ч\"}"
