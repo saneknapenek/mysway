@@ -1,0 +1,93 @@
+* {
+    font: "Roboto 14";
+
+	cblack: #111111;
+	cpink:	#ff4da6;
+	cblue:	#6363c4;
+	cdblue: #343457;
+	cgreen: #3dd3a5;
+	cred: #8e1c1c;
+	corange: #9f6f17;
+
+	foreground: @cdblue;
+	background: @cblack;
+
+    margin:     0px;
+    padding:    0px;
+    spacing:    0px;
+}
+
+window {
+    width: 350px;
+	border: 3px;
+	padding: 0px;
+
+	location: northeast;
+}
+
+mainbox {
+    margin: 0px;
+	padding: 16px;
+	children: [ listview ];
+}
+
+entry {
+    font: "Source Code Pro 14";
+    text-color: @cgreen;
+	text-style: bold;
+    blink: true;
+	background-color: @cdblue;
+}
+
+listview {
+    scrollbar: none;
+	margin: 0px;
+    border: 0px;
+	padding: 0px;
+	spacing: 0px;
+    lines: 4;
+	columns: 1;
+}
+
+element {
+    padding: 8px 6px 6px 6px;
+	orientation: horizontal;
+    children: [ element-text ];
+}
+
+element-icon {
+	size: 40px;
+	padding: 0px;
+	margin: 8px;
+} 
+
+element-text {
+	highlight: inherit;
+    vertical-align: 0.5;
+}
+
+element.normal.normal {
+    text-color: @cdblue;
+    background-color: @background;
+	border: 0px;
+}
+
+element.alternate.normal {
+    text-color: @cdblue;
+    background-color: @background;
+	border: 0px;
+}
+
+element.selected.normal {
+	text-color: @cblue;
+	border: 3px;
+    background-color: @background;
+	text-color: @cblue;
+}
+
+configuration {
+	kb-row-up: "Up,Alt+k";
+	kb-row-down: "Down,Alt+j";
+	kb-row-left: "Alt+h";
+	kb-row-right: "Alt+l";
+} 

@@ -107,7 +107,8 @@
 
     "wireplumber": {
         "format": "{icon}",
-        "format-muted": ""
+        "format-muted": "",
+		"on-click": "~/.config/rofi/audio_sinks/exec.sh"
     },
 
     "group/main": {
