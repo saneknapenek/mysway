@@ -12,4 +12,18 @@ description=$(echo "$response" | awk '{for (i=5; i<=NF; i++) printf "%s ", $i; p
 
 description=$(echo "$description" | xargs)
 
+case "$icon" in
+    "☁️") icon="󰖐" ;;
+    "🌫") icon="󰖑" ;;
+    "🌧") icon="󰖗" ;;
+    "❄️") icon="󰼶" ;;
+    "🌦") icon="󰼳" ;;
+    "🌨") icon="󰖘" ;;
+    "⛅️") icon="󰖕" ;;
+    "☀️") icon="󰖙" ;;
+    "🌩") icon="󰖓" ;;
+    "⛈") icon="󰙾" ;;
+    *) icon="" ;;
+esac
+
 echo -e "{\"text\":\""$temp_current" "$icon"\", \"alt\":\""$temp_feels"\", \"tooltip\":\""$area"  "$temp_current"\r"$description"\rОщущается как  "$temp_feels"\rВетер "$wind_speed"\"}"
