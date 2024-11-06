@@ -1,5 +1,5 @@
 * {
-    font: "Roboto 14";
+    font: "Roboto 10";
 
 	cblack: #111111;
 	cpink:	#ff4da6;
@@ -19,7 +19,7 @@
 
 window {
     width: 350px;
-	border: 3px;
+	border: 2px;
 	border-radius: 3px;
 	padding: 0px;
 
@@ -28,12 +28,11 @@ window {
 
 mainbox {
     margin: 0px;
-	padding: 8px;
+	padding: 2px;
 	children: [ listview ];
 }
 
 entry {
-    font: "Source Code Pro 14";
     text-color: @cgreen;
 	text-style: bold;
     blink: true;
@@ -50,7 +49,7 @@ listview {
 }
 
 element {
-    padding: 6px;
+    padding: 4px;
 	orientation: horizontal;
     children: [ element-text ];
 }
@@ -75,7 +74,7 @@ element.alternate.normal {
 
 element.selected.normal {
 	text-color: @cblue;
-	border: 3px;
+	border: 2px;
     background-color: @background;
 	text-color: @cblue;
 }

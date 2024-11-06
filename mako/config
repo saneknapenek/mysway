@@ -18,7 +18,7 @@ on-notify=exec mpv /usr/share/sounds/freedesktop/stereo/message.oga
 
 # [ STYLE OPTIONS ]
 # which installed font for notification( any font installed )
-font= BigBlueTermPlus Nerd Font 10
+font=Roboto 10
 
 background-color=#111111
 text-color=#6363c4
@@ -30,9 +30,9 @@ progress-color=over #0b1c1c
 
 
 # margin of notification which is margin for the list of notification block( value in px ).
-outer-margin= 7,0,0,0
+outer-margin=5
 # Margin of each individual notification
-margin= 0,0,10,0
+margin=0,0,10,0
 
 # Set padding on each side to the size specified by directional( value in px )
 padding=16
@@ -43,7 +43,7 @@ border-size=2
 # color of border of each notification( #RRGGBB | #RRGGBBAA )
 
 # bordear radious of each notification(value in px )
-border-radius=0
+border-radius=3
 
 # Set popup progress indicator color to color.( value [over|source] ( #RRGGBB | #RRGGBBAA ))
 
