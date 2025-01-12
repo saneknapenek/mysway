@@ -2,7 +2,17 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local lspconfig = require('lspconfig')
 
-local servers = { 'gopls', 'rust_analyzer', 'pyright' }
+local servers = { 
+  'gopls',
+  'rust_analyzer',
+  'pyright',
+  'cssls',
+  'html',
+  'ts_ls',
+  'docker_compose_language_service', 
+  'docker_ls'
+}
+
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     capabilities = capabilities,

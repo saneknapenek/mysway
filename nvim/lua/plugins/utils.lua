@@ -23,7 +23,10 @@ end
 
 
 function utils.ChooseDirectory(dir)
-    local dirs = scan.scan_dir(dir, { only_dirs = true, depth = 1 })
+    -- local dirs = scan.scan_dir(dir, { only_dirs = true, depth = 1 })
+	local ignore_dirs = { ".git", "node_modules", "dist" }
+    local dirs = scan.scan_dir(dir, { only_dirs = true, depth = 1, ignore = ignore_dirs })
+
 
     pickers.new({}, {
         prompt_title = "Choose Directory",
