@@ -76,10 +76,9 @@ button:hover {
 }
 
 #clock {
-	font-size:12px;
-	font-weight: bold;
-	padding: 0 10px;
-	color: @c_blue;
+	font-size: 12px;
+	padding: 0 8px;
+	color: @c_green;
 	border: 2px solid @c_dblue;
 	background: @c_black;
 }
@@ -159,5 +158,5 @@ button:hover {
 	color: @c_blue;
 	border: 2px solid @c_dblue;
 	background: @c_black;
-	padding: 0px 5px 0px 5px;
+	padding: 0px 10px 0px 8px;
 }
