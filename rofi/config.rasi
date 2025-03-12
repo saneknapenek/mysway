@@ -57,20 +57,26 @@ listview {
 }
 
 element {
-    padding: 8px 6px 6px 6px;
+    padding: 0;
 	orientation: horizontal;
     children: [ element-icon, element-text ];
 }
 
 element-icon {
 	size: 20px;
-	padding: 0px;
-	margin: 8px 8px 8px 14px;
+	padding: 0;
+	margin: 0;
+    background-color: @cblue;
 } 
 
 element-text {
+	pading: 0;
+	margin: 0;
+	border: 0 0 0 10px;
+	color: @cblack;
 	highlight: inherit;
     vertical-align: 0.5;
+    background-color: @cdblue;
 }
 
 element.normal.normal {
@@ -84,14 +90,15 @@ element.alternate.normal {
 }
 
 element.selected.normal {
-	border: 2px 10px 2px 10px;
+	border: 0;
 	border-color: @cblue;
     background-color: @background;
 	text-color: @cblue;
 }
 
-element.selected.normal {
-	color: @cblue;
+element-text.selected {
+	color: @cpink;
+	border: 2px;
 }
 
 configuration {

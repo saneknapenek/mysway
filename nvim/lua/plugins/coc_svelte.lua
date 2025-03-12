@@ -1,0 +1,1 @@
+require('coc-svelte').setup()

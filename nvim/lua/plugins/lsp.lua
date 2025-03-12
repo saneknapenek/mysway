@@ -21,3 +21,15 @@ require('lspconfig').ts_ls.setup{
 require('lspconfig').docker_compose_language_service.setup{}
 
 require('lspconfig').dockerls.setup{}
+
+require("lspconfig").svelte.setup({
+  settings = {
+    svelte = {
+      plugin = {
+        svelte = {
+          format = { tabSize = 2, insertSpaces = true }
+        }
+      }
+    }
+  }
+})

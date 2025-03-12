@@ -1,0 +1,1 @@
+require('vim-svelte').setup()

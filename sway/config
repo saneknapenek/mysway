@@ -95,8 +95,9 @@ $mybindsym $mod+Return exec $term
 $mybindsym $mod+q kill
 
 # Start your launcher
-$mybindsym $mod+d exec $menu_drun
-$mybindsym $mod+Shift+d exec $menu
+# $mybindsym $mod+d exec $menu_drun
+$mybindsym $mod+d exec $menu
+# $mybindsym $mod+Shift+d exec $menu
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.

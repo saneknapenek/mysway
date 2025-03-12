@@ -1,6 +1,11 @@
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<C-M-p>', builtin.find_files, { desc = 'Telescope find files' })
 
+
+vim.keymap.set('n', 'gr', function()
+  require('telescope.builtin').lsp_references()
+end, { desc = "Find references in the project" })
+
 require('telescope').setup({
 	defaults = {
 		hidden = true,

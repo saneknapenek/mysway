@@ -13,6 +13,16 @@ vim.opt.signcolumn = "yes"
 
 vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
 vim.keymap.set('v', '<C-c>', '"+y')
+vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = "Go to references" })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "svelte",
+  callback = function()
+    vim.bo.tabstop = 2
+    vim.bo.shiftwidth = 2
+    vim.bo.expandtab = true
+  end,
+})
 
 local vim = vim
 local Plug = vim.fn['plug#']
@@ -54,6 +64,12 @@ Plug('ray-x/guihua.lua')
 Plug('startup-nvim/startup.nvim')
 Plug('rebelot/kanagawa.nvim')
 
+-- For svelte
+Plug('evanleck/vim-svelte')
+Plug('coc-extensions/coc-svelte')
+
+Plug('luckasRanarison/tailwind-tools.nvim')
+
 vim.call('plug#end')
 
 require('plugins.nerdtree')
@@ -73,7 +89,16 @@ require('plugins.ibl')
 require('plugins.startup')
 require('plugins.kanagawa')
 
+require("tailwind-tools").setup({
+  -- your configuration
+})
+
 -- require('lspconfig').pyright.setup{}
 -- require('lspconfig').rust_analyzer.setup{}
+
+-- For svelte
+-- require('plugins.vim_svelte')
+-- require('plugins.coc_svelte')
+
 
 vim.cmd('silent! colorscheme kanagawa')
